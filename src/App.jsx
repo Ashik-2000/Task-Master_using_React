@@ -2,7 +2,7 @@ function App() {
 
     return (
         <>
-            <h1>Task Master</h1>
+            <h1 className="text-9xl">Task Master</h1>
         </>
     );
 }
