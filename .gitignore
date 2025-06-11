@@ -25,3 +25,6 @@ dist-ssr
 
 # TailwindCSS prettier plugin
 .prettierrc
+
+# Others
+Component_Plan.JPG

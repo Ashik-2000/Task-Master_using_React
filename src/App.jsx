@@ -1,8 +1,17 @@
-function App() {
+import Footer from './Footer';
+import Header from './Header';
+import HeroSection from './HeroSection';
+import TastBoard from './task/TaskBoard';
 
+function App() {
     return (
         <>
-            <h1 className="text-9xl">Task Master</h1>
+            <Header />
+            <div className="flex flex-col items-center justify-center">
+                <HeroSection />
+                <TastBoard />
+            </div>
+            <Footer />
         </>
     );
 }
