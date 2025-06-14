@@ -1,6 +1,6 @@
-import { FaStar } from "react-icons/fa";
+import { FaStar } from 'react-icons/fa';
 
-export default function TaskList({ tasks }) {
+export default function TaskList({ tasks, handleEditTask }) {
     return (
         <div className="overflow-auto">
             <table className="table-fixed overflow-auto xl:w-full">
@@ -30,7 +30,13 @@ export default function TaskList({ tasks }) {
                             key={task.id}
                             className="border-b border-[#2E3443] [&>td]:px-4 [&>td]:py-2 [&>td]:align-baseline"
                         >
-                            <td>{task.isFavourite ? <FaStar color="yellow"/> : <FaStar color="gray"/>}</td>
+                            <td>
+                                {task.isFavourite ? (
+                                    <FaStar color="yellow" />
+                                ) : (
+                                    <FaStar color="gray" />
+                                )}
+                            </td>
                             <td className="text-center">{task.title} </td>
                             <td>
                                 <div>{task.description}</div>
@@ -52,7 +58,10 @@ export default function TaskList({ tasks }) {
                                     <button className="text-red-500">
                                         Delete
                                     </button>
-                                    <button className="text-blue-500">
+                                    <button
+                                        className="text-blue-500"
+                                        onClick={() => handleEditTask(task)}
+                                    >
                                         Edit
                                     </button>
                                 </div>
