@@ -1,6 +1,6 @@
 import { FaStar } from 'react-icons/fa';
 
-export default function TaskList({ tasks, handleEditTask }) {
+export default function TaskList({ tasks, handleEditTask, handleDeleTask, hadleFavClick }) {
     return (
         <div className="overflow-auto">
             <table className="table-fixed overflow-auto xl:w-full">
@@ -31,11 +31,13 @@ export default function TaskList({ tasks, handleEditTask }) {
                             className="border-b border-[#2E3443] [&>td]:px-4 [&>td]:py-2 [&>td]:align-baseline"
                         >
                             <td>
-                                {task.isFavourite ? (
-                                    <FaStar color="yellow" />
-                                ) : (
-                                    <FaStar color="gray" />
-                                )}
+                                <buton onClick={() => hadleFavClick(task.id)}>
+                                    {task.isFavourite ? (
+                                        <FaStar color="yellow" />
+                                    ) : (
+                                        <FaStar color="gray" />
+                                    )}
+                                </buton>
                             </td>
                             <td className="text-center">{task.title} </td>
                             <td>
@@ -55,7 +57,10 @@ export default function TaskList({ tasks, handleEditTask }) {
                             <td className="text-center">{task.priority}</td>
                             <td>
                                 <div className="flex items-center justify-center space-x-3">
-                                    <button className="text-red-500">
+                                    <button
+                                        className="text-red-500"
+                                        onClick={() => handleDeleTask(task.id)}
+                                    >
                                         Delete
                                     </button>
                                     <button

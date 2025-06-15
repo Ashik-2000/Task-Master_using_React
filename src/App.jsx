@@ -1,4 +1,4 @@
-import Footer from './Footer';
+import Footer from './Footer';  
 import Header from './Header';
 import HeroSection from './HeroSection';
 import TastBoard from './task/TaskBoard';
@@ -11,7 +11,7 @@ function App() {
                 <HeroSection />
                 <TastBoard />
             </div>
-            <Footer />
+            <Footer /> 
         </>
     );
 }

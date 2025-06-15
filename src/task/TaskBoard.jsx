@@ -33,7 +33,33 @@ export default function TastBoard() {
     const handleClose = () => {
         setEditingTask(null);
         setShowAddModal(false);
-    }
+    };
+
+    const handleDeleTask = (taskId) => {
+        const tasksAfterDelete = tasks.filter((task) => task.id !== taskId);
+        setTasks(tasksAfterDelete);
+    };
+
+    const hadleDeleteAllTask = () => {
+        setTasks([]);
+    };
+
+    const hadleFavClick = (taskId) => {
+        // const newTask = tasks.map((task) => {
+        //     if (task.id === taskId) {
+        //         task.isFavourite = !task.isFavourite;
+        //         return task;
+        //     }
+        //     return task;
+        // });
+
+        // --- alternate method if don't wanna use map() ---
+        const taskIndex = tasks.findIndex((task) => task.id === taskId);
+        const newTask = [...tasks];
+        newTask[taskIndex].isFavourite = !newTask[taskIndex].isFavourite;
+
+        setTasks(newTask);
+    };
 
     return (
         <section className="mb-20" id="tasks">
@@ -49,8 +75,16 @@ export default function TastBoard() {
                     <SearchTask />
                 </div>
                 <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#0A192C] px-6 py-8 md:px-9 md:py-16">
-                    <TaskActions onAddClick={() => setShowAddModal(true)} />
-                    <TaskList tasks={tasks} handleEditTask={handleEditTask} />
+                    <TaskActions
+                        onAddClick={() => setShowAddModal(true)}
+                        hadleDeleteAllTask={hadleDeleteAllTask}
+                    />
+                    <TaskList
+                        tasks={tasks}
+                        handleEditTask={handleEditTask}
+                        handleDeleTask={handleDeleTask}
+                        hadleFavClick={hadleFavClick}
+                    />
                 </div>
             </div>
         </section>
