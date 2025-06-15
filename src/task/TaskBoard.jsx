@@ -61,6 +61,13 @@ export default function TastBoard() {
         setTasks(newTask);
     };
 
+    const handleSearch = (searchTerm) => {
+        const filteredTask = tasks.filter((task) =>
+            task.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setTasks(filteredTask);
+    };
+
     return (
         <section className="mb-20" id="tasks">
             {showAddModal && (
@@ -72,7 +79,7 @@ export default function TastBoard() {
             )}
             <div className="container">
                 <div className="flex justify-end p-2">
-                    <SearchTask />
+                    <SearchTask handleSearch={handleSearch} />
                 </div>
                 <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#0A192C] px-6 py-8 md:px-9 md:py-16">
                     <TaskActions
