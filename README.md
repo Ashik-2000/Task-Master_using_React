@@ -1,4 +1,4 @@
-[Live URL](#-live-url) -----|----- [Component Tree](#-component-tree) -----|----- [Built With](#-#️-built-with) -----|----- [Features](#-features) -----|----- [Things I Got to Learn](#-things-i-got-to-learn-from-this-project) -----|----- [Getting Started](#-getting-started)
+[Live URL](#-live-url) -----|----- [Component Tree](#-component-tree) -----|----- [Built With](#-built-with) -----|----- [Features](#-features) -----|----- [Things I Got to Learn](#-things-i-got-to-learn-from-this-project) -----|----- [Getting Started](#-getting-started)
 
 
 # Task Master
@@ -17,7 +17,7 @@ A classic task master desing that helps to manage daily task and allows users to
 
 ---
 
-## 🛠️ Built With
+## Built With
 
 - React (Functional Components + Hooks)
 - JavaScript (ES6+)
