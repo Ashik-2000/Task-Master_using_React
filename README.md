@@ -17,7 +17,7 @@ A classic task master desing that helps to manage daily task and allows users to
 
 ---
 
-## Built With
+## 🛠️ Built With
 
 - React (Functional Components + Hooks)
 - JavaScript (ES6+)
