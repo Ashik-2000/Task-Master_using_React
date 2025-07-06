@@ -13,7 +13,7 @@ A classic task master desing that helps to manage daily task and allows users to
 
 ## 🧩 Component Tree
 
-![Component structure and data flow]()
+![Component structure and data flow](./Component_Plan.jpg)
 
 ---
 
